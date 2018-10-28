@@ -1,0 +1,101 @@
+//
+// Global Settigns
+// --------------------------------------------------
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	// @include container()
+}
+
+.error {
+	color: $errorColor;
+}
+
+.success {
+	color: $successColor;
+}
+
+
+.wysiwyg { padding: $space 0em; }
+
+body {
+	background: $baseColor;
+
+}
+
+
+
+.-shadow {
+
+	position: relative;
+
+
+	&:after {
+		content: " ";
+		display: block;
+		position: absolute;
+		width: 80%;
+		left: 50%;
+		bottom: 0px;
+		box-shadow: $shadow;
+		height: 100%;
+		z-index: -1;
+		transform: translateX(-50%);
+	}
+
+}
+
+.app-body {
+	float: left;
+	width: 100%;
+	padding: $space;
+	padding-left: $space*2;
+	position: absolute;
+}
+
+.App {
+	position: relative;
+}
+
+.transition-enter {
+
+		.app-body {
+			opacity: 0;
+			transform: translateY(10px);
+			z-index: 1;
+
+		}
+
+}
+.transition-enter.transition-enter-active {
+
+	.app-body {
+		opacity: 1;
+	  	transition: all 250ms;
+		transition-delay: 250ms;
+		transform: translateY(0px);
+	}
+}
+.transition-exit {
+
+	.navigation {
+		display: none;
+	}
+
+	.app-body {
+		opacity: 1;
+		transform: translateY(0px);
+		z-index: -1;
+	}
+}
+.transition-exit.transition-exit-active {
+
+	.app-body {
+		opacity: 0;
+		transition: all 250ms;
+		transform: translateY(10px);
+	}
+}

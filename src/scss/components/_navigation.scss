@@ -1,0 +1,29 @@
+.navigation {
+  float: left;
+  background-color: white;
+  padding: $space/4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: $space;
+  z-index: 100;
+
+  .logo {
+    img { width: 100%; height: auto; }
+  }
+
+  .links {
+    position: absolute;
+    bottom: $space/4;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    a {
+      color: $darkBaseColor;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
